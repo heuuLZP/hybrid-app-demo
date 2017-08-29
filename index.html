@@ -3,14 +3,52 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title></title>
-    <script src="js/mui.min.js"></script>
     <link href="css/mui.min.css" rel="stylesheet"/>
-    <script type="text/javascript" charset="utf-8">
-      	mui.init();
-    </script>
+    <style>
+    		.logo {
+    			text-align: center;
+    			padding: 35px 0 50px;
+    		}
+    </style>
 </head>
 <body>
-	
+	<div class="mui-content">
+		<h1 class="logo">HBuilder</h1>
+		<ul class="mui-table-view">
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="#">UI组件</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="#">窗口管理</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="#">事件管理</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="#">utils</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="#">AJAX</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="#">下拉刷新</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="#">上拉加载</a>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-navigate-right" href="#">代码块</a>
+			</li>
+		</ul>
+	</div>
 </body>
+<script src="js/mui.min.js"></script>
+<script>
+    (function($, doc){
+    		$.init();
+    }(mui, document));
+</script>
 </html>
