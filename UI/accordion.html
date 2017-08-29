@@ -7,23 +7,84 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<link href="../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.item {
+				margin-top: 20px;
+			}
+		</style>
 	</head>
 	<body>
+		<!-- header -->
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">accordion</h1>
+		</header>
+		<!-- content -->
 		<div class="mui-content">
-			<ul class="mui-table-view"> 
-		        <li class="mui-table-view-cell mui-collapse">
-		            <a class="mui-navigate-right" href="#">面板1</a>
-		            <div class="mui-collapse-content">
-		                <p>面板1子内容</p>
-		            </div>
-		        </li>
-		    </ul>
+			<!-- 向右 -->
+			<div class="item">
+				<ul class="mui-table-view"> 
+			        <li class="mui-table-view-cell">
+			            <a class="mui-navigate-right" href="alert">面板一</a>
+			        </li>
+			        <li class="mui-table-view-cell">
+			            <a class="mui-navigate-right" href="alert">面板二</a>
+			        </li>
+			    </ul>
+			</div>
+			<!-- 向下 -->
+			<div class="item">
+				<ul class="mui-table-view"> 
+			        <li class="mui-table-view-cell mui-collapse">
+			            <a class="mui-navigate-right" href="#">面板三</a>
+			            <div class="mui-collapse-content">
+			                <p>面板1子内容</p>
+			            </div>
+			        </li>
+			    </ul>
+			</div>
+			<!-- 向下多个 -->
+			<div class="item">
+				<ul class="mui-table-view"> 
+			        <li class="mui-table-view-cell mui-collapse">
+			            <a class="mui-navigate-right" href="#">面板四</a>
+			            <ul class="mui-table-view"> 
+					        <li class="mui-table-view-cell">
+					            <a class="mui-navigate-right" href="alert">子内容一</a>
+					        </li>
+					        <li class="mui-table-view-cell">
+					            <a class="mui-navigate-right" href="alert">子内容二</a>
+					        </li>
+					    </ul>
+			        </li>
+			    </ul>
+			</div>
 		</div>
 	</body>
 	<script src="../js/mui.min.js"></script>
 	<script>
 	    (function($, doc){
-	    		$.init();
+	    		$.init({
+	    			statusBarBackground: '#f7f7f7'
+	    		});
+	    		$('.mui-content').on('tap', 'a', function() {
+	    			var href = this.getAttribute("href");
+	    			if(href == "alert"){
+	    				setTimeout(function(){
+	    					if(plus) {
+	    						tips("right");
+	    					} else {
+	    						$.plusReady(function(){
+		                    // 在这里调用plus api
+		                    tips("right");
+		                   });
+	    					}
+	    					function tips(msg){
+	    						plus.nativeUI.toast(msg);
+	    					}
+	    				},100)
+	    			}
+	    		})
 	    }(mui, document));
 	</script>
 </html>
