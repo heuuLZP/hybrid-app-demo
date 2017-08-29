@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title></title>
-    <link href="css/mui.min.css" rel="stylesheet"/>
-    <style>
-    		.logo {
-    			text-align: center;
-    			padding: 35px 0 50px;
-    		}
-    </style>
-</head>
-<body>
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <title></title>
+	    <link href="css/mui.min.css" rel="stylesheet"/>
+	    <style>
+	    		.logo {
+	    			text-align: center;
+	    			padding: 35px 0 50px;
+	    		}
+	    </style>
+	</head>
+	<body>
 	<div class="mui-content">
 		<h1 class="logo">HBuilder</h1>
-		<ul class="mui-table-view">
+		<ul id="list" class="mui-table-view">
 			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="#">UI组件</a>
+				<a class="mui-navigate-right" href="UI/accordion.html">UI组件</a>
 			</li>
 			<li class="mui-table-view-cell">
 				<a class="mui-navigate-right" href="#">窗口管理</a>
@@ -45,10 +45,42 @@
 		</ul>
 	</div>
 </body>
-<script src="js/mui.min.js"></script>
-<script>
-    (function($, doc){
-    		$.init();
-    }(mui, document));
-</script>
+	<script src="js/mui.min.js"></script>
+	<script>
+	    (function($, doc){
+	    		$.init({
+	    			statusBarBackground: '#f7f7f7'
+	    		});
+	    		
+	    		var aniShow = "pop-in";
+	    		
+	    		//主列表点击事件
+	    		$('#list').on('tap', 'a', function() {
+	    			var href = this.getAttribute('href');
+	    			var id = href;
+
+				//非plus环境，直接走href跳转
+				if(!$.os.plus){
+					location.href = href;
+					return;
+				}
+				
+				var webview_style = {
+					popGesture: "close"
+				}
+				var extras = {};
+				
+				webview_style.statusbar = {
+					background: "#f7f7f7"
+				}
+				
+				var webview = plus.webview.create(this.href,id,webview_style,extras);
+				webview.addEventListener("titleUpdate",function () {
+					setTimeout(function () {
+						webview.show(aniShow,300);
+					},100);
+				});
+	    		})
+	    }(mui, document));
+	</script>
 </html>
