@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style type="text/css">
+			p {
+				padding: 20px;
+				color: #333;
+			}
+			pre {
+				padding-left: 20px;;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- header -->
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">页面初始化</h1>
+		</header>
+		<div class="mui-content">
+		    <p>
+		    		若要使用HTML5+扩展api，必须等plusready事件发生后才能正常使用。
+		    </p>
+		    <p>
+		    		安全的使用plus对象
+		    </p>
+		    <pre>
+if(plus) {
+  // 在这里调用plus api
+} else {
+  $.plusReady(function(){
+    // 在这里调用plus api
+   });
+}
+		    </pre>
+		</div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script>
+	    (function($, doc){
+	    		$.init({
+	    			statusBarBackground: '#f7f7f7'
+	    		});
+	    		$.plusReady(() => {
+	    			let url = plus.webview.currentWebview().getURL();
+	    			let index = url.indexOf("www/pages");
+	    			url = url.substring(index, url.length);
+	    			plus.nativeUI.alert("当前页面URL："+ url);
+	    		})
+	    }(mui, document));
+	</script>
+</html>

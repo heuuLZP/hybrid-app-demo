@@ -244,7 +244,8 @@
 	      ],
 	      "refer": [
 	        "UI/accordion.html",
-	        "pages/UI/index.html"
+	        "pages/UI/index.html",
+	        "pages/window/index.html"
 	      ],
 	      "priority": 0
 	    },
@@ -255,7 +256,8 @@
 	        "css/mui.min.css",
 	        "fonts/mui.ttf"
 	      ],
-	      "priority": 0
+	      "priority": 0,
+	      "refer": []
 	    },
 	    "pages/UI/actionsheet.html": {
 	      "href": "pages/UI/actionsheet.html",
@@ -264,7 +266,8 @@
 	        "css/mui.min.css",
 	        "fonts/mui.ttf"
 	      ],
-	      "priority": 1
+	      "priority": 1,
+	      "refer": []
 	    },
 	    "pages/UI/index.html": {
 	      "href": "pages/UI/index.html",
@@ -278,6 +281,15 @@
 	        "pages/UI/actionsheet.html"
 	      ],
 	      "priority": 0
+	    },
+	    "pages/window/index.html": {
+	      "href": "pages/window/index.html",
+	      "resources": [
+	        "js/mui.min.js",
+	        "css/mui.min.css",
+	        "fonts/mui.ttf"
+	      ],
+	      "priority": 1
 	    }
 	  },
 	  "idle": {

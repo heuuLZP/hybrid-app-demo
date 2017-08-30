@@ -16,7 +16,8 @@
     ],
     "refer": [
       "UI/accordion.html",
-      "pages/UI/index.html"
+      "pages/UI/index.html",
+      "pages/window/index.html"
     ],
     "priority": 0
   },
@@ -48,6 +49,15 @@
       "pages/UI/accordion.html",
       "pages/UI/actionsheet.html"
     ],
+    "priority": 0
+  },
+  "pages/window/index.html": {
+    "href": "pages/window/index.html",
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": [],
     "priority": 0
   }
 }
