@@ -13,9 +13,12 @@
 				text-align: center;
 				padding: 20px 0;
 			}
+			p {
+				padding: 20px;
+				color: #333;
+			}
 		</style>
 	</head>
-
 	<body>
 		<!-- header -->
 		<header class="mui-bar mui-bar-nav">
@@ -27,6 +30,12 @@
 				<button type="button" id="demo-1" class="mui-btn mui-btn-blue">示例一</button>
 				<button type="button" id="demo-2" class="mui-btn mui-btn-blue">示例二</button>
 			</div>
+			<p>
+				示例一：直接打开新页面
+			</p>
+			<p>
+				示例二：等新页面请求完数据，再显示
+			</p>
 		</div>
 	</body>
 	<script src="../../js/mui.min.js"></script>
@@ -35,12 +44,27 @@
 	    		$.init({
 	    			statusBarBackground: '#f7f7f7'
 	    		});
-	    		document.getElementById("demo-1").addEventListener("tap",function(){
+	    		let btn_1 = document.getElementById("demo-1");
+	    		let btn_2 = document.getElementById("demo-2");
+	    		//示例一
+	    		btn_1.addEventListener("tap",function(){
 	    			$.openWindow({
 	    				url: 'newpage.html',
 	    				id: 'newpage'
 	    			})
 	    		})
+	    		
+	    		//示例一
+	    		btn_2.addEventListener("tap",function(){
+	    			$.openWindow({
+	    				url: 'newpage-2.html',
+	    				id: 'newpage-2',
+	    				show:{
+	    					autoShow:false
+	    				}
+	    			})
+	    		})
+	    		
 	    }(mui, document));
 	</script>
 </html>
