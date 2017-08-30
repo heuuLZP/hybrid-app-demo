@@ -18,7 +18,8 @@
 		"refer": [
 			"UI/accordion.html",
 			"pages/UI/index.html",
-			"pages/window/index.html"
+			"pages/window/index.html",
+			"pages/event/index.html"
 		],
 		"priority": 0
 	},
@@ -62,18 +63,23 @@
 		"refer": [
 			"pages/window/init.html",
 			"pages/window/preload.html",
-			"pages/window/close.html"
+			"pages/window/close.html",
+			"pages/window/subpages.html",
+			"pages/window/openWindow.html"
 		],
 		"priority": 0
 	},
 	"pages/window/init.html": {
 		"resources": [
-			"css/mui.min.css"
-		]
+			"css/mui.min.css",
+			"js/mui.min.js"
+		],
+		"refer": []
 	},
 	"pages/window/preload.html": {
 		"resources": [
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"js/mui.min.js"
 		],
 		"refer": [
 			"pages/window/newpage.html"
@@ -81,7 +87,90 @@
 	},
 	"pages/window/close.html": {
 		"resources": [
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"js/mui.min.js"
+		],
+		"refer": []
+	},
+	"pages/window/subpages.html": {
+		"resources": [
+			"css/mui.min.css",
+			"pages/window/list.html",
+			"js/mui.min.js"
+		],
+		"refer": [
+			"pages/window/list.html",
+			"pages/window/subpages.html"
 		]
+	},
+	"pages/window/list.html": {
+		"href": "pages/window/list.html",
+		"resources": [
+			"css/mui.min.css",
+			"js/mui.min.js"
+		],
+		"refer": [],
+		"priority": 0
+	},
+	"pages/window/newpage-2.html": {
+		"href": "pages/window/newpage-2.html",
+		"resources": [
+			"css/mui.min.css",
+			"js/mui.min.js"
+		],
+		"refer": [],
+		"priority": 0
+	},
+	"pages/window/newpage-3.html": {
+		"href": "pages/window/newpage-3.html",
+		"resources": [
+			"css/mui.min.css",
+			"js/mui.min.js"
+		],
+		"refer": [],
+		"priority": 0
+	},
+	"pages/window/newpage.html": {
+		"href": "pages/window/newpage.html",
+		"resources": [
+			"css/mui.min.css",
+			"js/mui.min.js"
+		],
+		"refer": [],
+		"priority": 0
+	},
+	"pages/window/openWindow.html": {
+		"href": "pages/window/openWindow.html",
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"pages/window/newpage-2.html",
+			"pages/window/newpage-3.html",
+			"pages/window/newpage.html"
+		],
+		"priority": 0
+	},
+	"pages/event/gesture.html": {
+		"href": "pages/event/gesture.html",
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css"
+		],
+		"refer": [],
+		"priority": 0
+	},
+	"pages/event/index.html": {
+		"href": "pages/event/index.html",
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"fonts/mui.ttf"
+		],
+		"refer": [
+			"pages/event/gesture.html"
+		],
+		"priority": 0
 	}
 }

@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.box {
+				display: inline-block;
+				width: 100%;
+				height: 50px;
+				background: #FF5053;
+				transition: margin-left .1s ease-in-out;  
+				vertical-align: middle;
+			}
+			.box-wrap {
+				padding: 20px;
+			}
+			.item {
+				width: 100%;
+				display: table;
+				white-space: nowrap;
+				overflow: hidden;
+				box-sizing: border-box;
+			}
+			.item button {
+				display: inline-block;
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- header -->
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">手势事件</h1>
+		</header>
+		<div class="mui-content">
+			<div class="box-wrap">
+				<h5>滑动</h5>
+				<div class="item">
+					<div class="box box-1"></div>
+					<button type="button" class="mui-btn mui-btn-blue">删除</button>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script>
+	    (function($, doc){
+	    		$.init({
+	    			gestureConfig:{
+				   tap: true, //默认为true
+				   doubletap: true, //默认为false
+				   longtap: true, //默认为false
+				   swipe: true, //默认为true
+				   drag: true, //默认为true
+				   hold:false,//默认为false，不监听
+				   release:false//默认为false，不监听
+				  },
+	    			statusBarBackground: '#f7f7f7'
+	    		});
+	    		let box_1 = document.getElementsByClassName("box-1")[0];
+	    		
+	    		box_1.addEventListener("swipeleft",function(event){
+	    			this.style.marginLeft = "-54px";
+	    		})
+	    		box_1.addEventListener("swiperight",function(event){
+	    			this.style.marginLeft = "0";
+	    		})
+	    		
+	    }(mui, document));
+	</script>
+</html>

@@ -224,109 +224,202 @@
 		}
 	},
 	"dependencies": {
-		"pages": {
-			"UI/accordion.html": {
-				"href": "UI/accordion.html",
-				"resources": [
-					"css/mui.min.css",
-					"fonts/mui.ttf"
-				],
-				"priority": 0
-			},
-			"index.html": {
-				"href": "index.html",
-				"resources": [
-					"js/mui.min.js",
-					"css/mui.min.css",
-					"fonts/mui.ttf",
-					"css/icons-extra.css",
-					"fonts/mui-icons-extra.ttf"
-				],
-				"refer": [
-					"UI/accordion.html",
-					"pages/UI/index.html",
-					"pages/window/index.html"
-				],
-				"priority": 0
-			},
-			"pages/UI/accordion.html": {
-				"href": "pages/UI/accordion.html",
-				"resources": [
-					"js/mui.min.js",
-					"css/mui.min.css",
-					"fonts/mui.ttf"
-				],
-				"priority": 0,
-				"refer": []
-			},
-			"pages/UI/actionsheet.html": {
-				"href": "pages/UI/actionsheet.html",
-				"resources": [
-					"js/mui.min.js",
-					"css/mui.min.css",
-					"fonts/mui.ttf"
-				],
-				"priority": 1,
-				"refer": []
-			},
-			"pages/UI/index.html": {
-				"href": "pages/UI/index.html",
-				"resources": [
-					"js/mui.min.js",
-					"css/mui.min.css",
-					"fonts/mui.ttf"
-				],
-				"refer": [
-					"pages/UI/accordion.html",
-					"pages/UI/actionsheet.html"
-				],
-				"priority": 0
-			},
-			"pages/window/index.html": {
-				"href": "pages/window/index.html",
-				"resources": [
-					"js/mui.min.js",
-					"css/mui.min.css",
-					"fonts/mui.ttf"
-				],
-				"priority": 1,
-				"refer": [
-					"pages/window/init.html",
-					"pages/window/preload.html",
-					"pages/window/close.html"
-				]
-			},
-			"pages/window/init.html": {
-				"resources": [
-					"css/mui.min.css"
-				],
-				"refer": [],
-				"priority": 0
-			},
-			"pages/window/preload.html": {
-				"resources": [
-					"css/mui.min.css"
-				],
-				"refer": [
-					"pages/window/newpage.html"
-				],
-				"priority": 0
-			},
-			"pages/window/close.html": {
-				"resources": [
-					"css/mui.min.css"
-				],
-				"refer": [],
-				"priority": 0
-			}
-		},
-		"idle": {
-			"resources": [
-				"LICENSE",
-				"js/mui.js",
-				"css/mui.css",
-				"README.md"
-			]
-		}
+	  "pages": {
+	    "UI/accordion.html": {
+	      "href": "UI/accordion.html",
+	      "resources": [
+	        "css/mui.min.css",
+	        "fonts/mui.ttf"
+	      ],
+	      "priority": 0
+	    },
+	    "index.html": {
+	      "href": "index.html",
+	      "resources": [
+	        "js/mui.min.js",
+	        "css/mui.min.css",
+	        "fonts/mui.ttf",
+	        "css/icons-extra.css",
+	        "fonts/mui-icons-extra.ttf"
+	      ],
+	      "refer": [
+	        "UI/accordion.html",
+	        "pages/UI/index.html",
+	        "pages/window/index.html",
+	        "pages/event/index.html"
+	      ],
+	      "priority": 0
+	    },
+	    "pages/UI/accordion.html": {
+	      "href": "pages/UI/accordion.html",
+	      "resources": [
+	        "js/mui.min.js",
+	        "css/mui.min.css",
+	        "fonts/mui.ttf"
+	      ],
+	      "priority": 0,
+	      "refer": []
+	    },
+	    "pages/UI/actionsheet.html": {
+	      "href": "pages/UI/actionsheet.html",
+	      "resources": [
+	        "js/mui.min.js",
+	        "css/mui.min.css",
+	        "fonts/mui.ttf"
+	      ],
+	      "priority": 1,
+	      "refer": []
+	    },
+	    "pages/UI/index.html": {
+	      "href": "pages/UI/index.html",
+	      "resources": [
+	        "js/mui.min.js",
+	        "css/mui.min.css",
+	        "fonts/mui.ttf"
+	      ],
+	      "refer": [
+	        "pages/UI/accordion.html",
+	        "pages/UI/actionsheet.html"
+	      ],
+	      "priority": 0
+	    },
+	    "pages/window/index.html": {
+	      "href": "pages/window/index.html",
+	      "resources": [
+	        "js/mui.min.js",
+	        "css/mui.min.css",
+	        "fonts/mui.ttf"
+	      ],
+	      "priority": 1,
+	      "refer": [
+	        "pages/window/init.html",
+	        "pages/window/preload.html",
+	        "pages/window/close.html",
+	        "pages/window/subpages.html",
+	        "pages/window/openWindow.html"
+	      ]
+	    },
+	    "pages/window/init.html": {
+	      "resources": [
+	        "css/mui.min.css",
+	        "js/mui.min.js",
+	        "fonts/mui.ttf"
+	      ],
+	      "refer": [],
+	      "priority": 0
+	    },
+	    "pages/window/preload.html": {
+	      "resources": [
+	        "css/mui.min.css",
+	        "js/mui.min.js",
+	        "fonts/mui.ttf"
+	      ],
+	      "refer": [
+	        "pages/window/newpage.html"
+	      ],
+	      "priority": 0
+	    },
+	    "pages/window/close.html": {
+	      "resources": [
+	        "css/mui.min.css",
+	        "js/mui.min.js",
+	        "fonts/mui.ttf"
+	      ],
+	      "refer": [],
+	      "priority": 0
+	    },
+	    "pages/window/subpages.html": {
+	      "resources": [
+	        "css/mui.min.css",
+	        "pages/window/list.html",
+	        "js/mui.min.js",
+	        "fonts/mui.ttf"
+	      ],
+	      "refer": [
+	        "pages/window/subpages.html",
+	        "pages/window/list.html"
+	      ],
+	      "priority": 0
+	    },
+	    "pages/window/list.html": {
+	      "href": "pages/window/list.html",
+	      "resources": [
+	        "css/mui.min.css",
+	        "fonts/mui.ttf",
+	        "js/mui.min.js"
+	      ],
+	      "priority": 3
+	    },
+	    "pages/window/newpage-2.html": {
+	      "href": "pages/window/newpage-2.html",
+	      "resources": [
+	        "css/mui.min.css",
+	        "fonts/mui.ttf",
+	        "js/mui.min.js"
+	      ],
+	      "priority": 3
+	    },
+	    "pages/window/newpage-3.html": {
+	      "href": "pages/window/newpage-3.html",
+	      "resources": [
+	        "css/mui.min.css",
+	        "fonts/mui.ttf",
+	        "js/mui.min.js"
+	      ],
+	      "priority": 4
+	    },
+	    "pages/window/newpage.html": {
+	      "href": "pages/window/newpage.html",
+	      "resources": [
+	        "css/mui.min.css",
+	        "fonts/mui.ttf",
+	        "js/mui.min.js"
+	      ],
+	      "priority": 5
+	    },
+	    "pages/window/openWindow.html": {
+	      "href": "pages/window/openWindow.html",
+	      "resources": [
+	        "js/mui.min.js",
+	        "css/mui.min.css",
+	        "fonts/mui.ttf"
+	      ],
+	      "refer": [
+	        "pages/window/newpage-2.html",
+	        "pages/window/newpage-3.html",
+	        "pages/window/newpage.html"
+	      ],
+	      "priority": 3
+	    },
+	    "pages/event/gesture.html": {
+	      "href": "pages/event/gesture.html",
+	      "resources": [
+	        "js/mui.min.js",
+	        "css/mui.min.css",
+	        "fonts/mui.ttf"
+	      ],
+	      "priority": 2
+	    },
+	    "pages/event/index.html": {
+	      "href": "pages/event/index.html",
+	      "resources": [
+	        "js/mui.min.js",
+	        "css/mui.min.css",
+	        "fonts/mui.ttf"
+	      ],
+	      "refer": [
+	        "pages/event/gesture.html"
+	      ],
+	      "priority": 2
+	    }
+	  },
+	  "idle": {
+	    "resources": [
+	      "LICENSE",
+	      "js/mui.js",
+	      "css/mui.css",
+	      "README.md"
+	    ]
+	  }
 	}
 }
