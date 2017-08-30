@@ -24,8 +24,11 @@
 				<li class="mui-table-view-cell">
 					<a class="mui-navigate-right" href="subpages.html">创建子页面</a>
 				</li>
-				<li class="mui-table-view-cell">
+				<li class="mui-table-view-cell"li class="mui-table-view-cell">
 					<a class="mui-navigate-right" href="openWindow.html">打开新页面</a>
+				</li>
+				<li class="mui-table-view-cell"li class="mui-table-view-cell">
+					<a class="mui-navigate-right" href="close.html">关闭页面</a>
 				</li>
 			</ul>
 		</div>
@@ -36,6 +39,35 @@
 	    		$.init({
 	    			statusBarBackground: '#f7f7f7'
 	    		});
+	    		const aniShow = "pop-in";
+	    		
+	    		//主列表点击事件
+	    		$('#list').on('tap', 'a', function() {
+	    			let href = this.getAttribute('href');
+	    			let id = href;
+
+				//非plus环境，直接走href跳转
+				if(!$.os.plus){
+					location.href = href;
+					return;
+				}
+				
+				let webview_style = {
+					popGesture: "close"
+				}
+				let extras = {};
+				
+				webview_style.statusbar = {
+					background: "#f7f7f7"
+				}
+				
+				let webview = plus.webview.create(this.href,id,webview_style,extras);
+				webview.addEventListener("titleUpdate",function () {
+					setTimeout(function () {
+						webview.show(aniShow,300);
+					},100);
+				});
+	    		})
 	    }(mui, document));
 	</script>
 </html>
