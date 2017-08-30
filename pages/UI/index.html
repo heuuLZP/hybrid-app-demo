@@ -34,12 +34,12 @@
 	    			statusBarBackground: '#f7f7f7'
 	    		});
 	    		
-	    		var aniShow = "pop-in";
+	    		const aniShow = "pop-in";
 	    		
 	    		//主列表点击事件
 	    		$('#list').on('tap', 'a', function() {
-	    			var href = this.getAttribute('href');
-	    			var id = href;
+	    			let href = this.getAttribute('href');
+	    			let id = href;
 
 				//非plus环境，直接走href跳转
 				if(!$.os.plus){
@@ -47,16 +47,16 @@
 					return;
 				}
 				
-				var webview_style = {
+				let webview_style = {
 					popGesture: "close"
 				}
-				var extras = {};
+				let extras = {};
 				
 				webview_style.statusbar = {
 					background: "#f7f7f7"
 				}
 				
-				var webview = plus.webview.create(this.href,id,webview_style,extras);
+				let webview = plus.webview.create(this.href,id,webview_style,extras);
 				webview.addEventListener("titleUpdate",function () {
 					setTimeout(function () {
 						webview.show(aniShow,300);
