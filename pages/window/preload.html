@@ -42,13 +42,11 @@
 			    url:"newpage.html",
 			    id:"newpage" //默认使用当前页面的url作为id
 			});
+
 			let btn_1 = document.getElementById("demo-1");
 	    		//示例一
 	    		btn_1.addEventListener("tap",function(){
-	    			$.openWindow({
-	    				url: 'newpage.html',
-	    				id: 'newpage'
-	    			})
+	    			prepage.show();
 	    		})
 	    		$.plusReady(function(){
 				setTimeout(function(){
@@ -56,8 +54,7 @@
 					if(array){
 						for(let i=0,len=array.length;i<len;i++){
 							let url = array[i].getURL();
-				    			let index = url.indexOf("www/pages");
-				    			url = url.substring(index, url.length);
+							url = getURL(url, "www/pages")
 				    			if (url === "www/pages/window/newpage.html") {
 				    				plus.nativeUI.alert("预加载页面URL："+ url);	
 				    			}
@@ -65,6 +62,10 @@
 					}
 				},5000)
 			});
+			function getURL(url,params) {
+	    			let index = url.indexOf(params);
+	    			return url.substring(index, url.length);
+			}
 	    }(mui, document));
 	</script>
 </html>
