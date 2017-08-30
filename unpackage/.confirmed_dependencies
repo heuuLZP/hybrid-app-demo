@@ -11,10 +11,42 @@
     "href": "index.html",
     "resources": [
       "js/mui.min.js",
+      "css/mui.min.css",
+      "css/icons-extra.css"
+    ],
+    "refer": [
+      "UI/accordion.html",
+      "pages/UI/index.html"
+    ],
+    "priority": 0
+  },
+  "pages/UI/accordion.html": {
+    "href": "pages/UI/accordion.html",
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "pages/UI/actionsheet.html": {
+    "href": "pages/UI/actionsheet.html",
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css"
+    ],
+    "refer": [],
+    "priority": 0
+  },
+  "pages/UI/index.html": {
+    "href": "pages/UI/index.html",
+    "resources": [
+      "js/mui.min.js",
       "css/mui.min.css"
     ],
     "refer": [
-      "UI/accordion.html"
+      "pages/UI/accordion.html",
+      "pages/UI/actionsheet.html"
     ],
     "priority": 0
   }

@@ -1,1 +1,44 @@
-null
+{
+  "pages/UI/accordion.html": {
+    "href": "pages/UI/accordion.html",
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf"
+    ],
+    "priority": 0
+  },
+  "pages/UI/actionsheet.html": {
+    "href": "pages/UI/actionsheet.html",
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf"
+    ],
+    "priority": 1
+  },
+  "pages/UI/index.html": {
+    "href": "pages/UI/index.html",
+    "resources": [
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "pages/UI/accordion.html",
+      "pages/UI/actionsheet.html"
+    ],
+    "priority": 0
+  },
+  "index.html": {
+    "href": "index.html",
+    "resources": [
+      "css/icons-extra.css",
+      "fonts/mui-icons-extra.ttf"
+    ],
+    "refer": [
+      "pages/UI/index.html"
+    ],
+    "priority": 0
+  }
+}
