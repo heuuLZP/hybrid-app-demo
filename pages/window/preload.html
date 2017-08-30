@@ -29,7 +29,7 @@
 				<button type="button" id="demo-1" class="mui-btn mui-btn-blue">示例一</button>
 			</div>
 			<p>
-				示例一：mui.preload方式预加载，5s后显示预加载页面url
+				示例一：mui.preload方式预加载，5s后显示预加载页面url(部分android不支持)
 			</p>
 		</div>
 	</body>
@@ -38,23 +38,31 @@
 	    (function($, doc){
 	    		$.init({
 	    		});
-	    		let prepage = $.preload({
-			    url:"newpage.html",
-			    id:"newpage" //默认使用当前页面的url作为id
-			});
+	    		let prepage;
 
 			let btn_1 = document.getElementById("demo-1");
 	    		//示例一
 	    		btn_1.addEventListener("tap",function(){
-	    			prepage.show();
+	    			if(prepage){
+	    				prepage.show();
+	    			} else {
+	    				$.openWindow({
+				      	url:"newpage.html",
+					    id:"newpage" //默认使用当前页面的url作为id
+					});
+	    			}
 	    		})
 	    		$.plusReady(function(){
+	    			prepage = $.preload({
+				    url:"newpage.html",
+				    id:"newpage" //默认使用当前页面的url作为id
+				});
 				setTimeout(function(){
 					let array = plus.webview.all();
 					if(array){
 						for(let i=0,len=array.length;i<len;i++){
 							let url = array[i].getURL();
-							url = getURL(url, "www/pages")
+							url = getURL(url, "www/pages");
 				    			if (url === "www/pages/window/newpage.html") {
 				    				plus.nativeUI.alert("预加载页面URL："+ url);	
 				    			}
