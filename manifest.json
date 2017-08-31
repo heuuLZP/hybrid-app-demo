@@ -438,7 +438,8 @@
 					"css/mui.min.css"
 				],
 				"refer": [
-					"pages/pullRefresh/single.html"
+					"pages/pullRefresh/single.html",
+					"pages/pullRefresh/double.html"
 				],
 				"priority": 0
 			},
@@ -454,6 +455,14 @@
 			"pages/event/detail.html": {
 				"resources": [
 					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"pages/pullRefresh/double.html": {
+				"resources": [
+					"css/mui.min.css",
+					"pages/pullRefresh/list.html"
 				],
 				"refer": [],
 				"priority": 0
