@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.btn-wrap{
+				padding: 20px;;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- header -->
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">ajax</h1>
+		</header>
+		<div class="mui-content">
+			<div class="btn-wrap">
+				<button type="button" id="btn-1" class="mui-btn mui-btn-blue">ajax</button>
+				<button type="button" id="btn-2" class="mui-btn mui-btn-blue">get</button>
+				<button type="button" id="btn-3" class="mui-btn mui-btn-blue">getJSON</button>
+			</div>
+		</div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script>
+	    (function($, doc){
+	    		$.init({
+	    			statusBarBackground: '#f7f7f7'
+	    		});
+	    		
+	    		$.plusReady(function () {
+	    			let btn_1 = document.getElementById("btn-1");
+	    			let btn_2 = document.getElementById("btn-2");
+	    			let btn_3 = document.getElementById("btn-3");
+	    		
+		    		btn_1.addEventListener("tap",function(event){
+		    			$.ajax('https://cnodejs.org/api/v1/topics',{
+						data:{
+						},
+						dataType:'json',//服务器返回json格式数据
+						type:'get',//HTTP请求类型
+						timeout:10000,//超时时间设置为10秒；
+						headers:{'Content-Type':'application/json'},	              
+						success:function(data){
+							//服务器返回响应，根据响应结果，分析是否登录成功；
+							if(data.success){
+								plus.nativeUI.alert("请求成功")
+							} else{
+								plus.nativeUI.alert("请求失败")
+							}
+						},
+						error:function(xhr,type,errorThrown){
+							//异常处理；
+							console.log(type);
+						}
+					});
+		    		})
+		    		
+		    		btn_2.addEventListener("tap",function(event){
+		    			mui.get('https://cnodejs.org/api/v1/topics',{},function(data){
+							//获得服务器响应
+							if(data.success){
+								plus.nativeUI.alert("请求成功")
+							} else{
+								plus.nativeUI.alert("请求失败")
+							}
+						},'json'
+					);
+		    		})
+		    		
+		    		btn_3.addEventListener("tap",function(event){
+		    			mui.getJSON('https://cnodejs.org/api/v1/topics',{},function(data){
+							//获得服务器响应
+							if(data.success){
+								plus.nativeUI.alert("请求成功")
+							} else{
+								plus.nativeUI.alert("请求失败")
+							}
+						},'json'
+					);
+		    		})
+	    		})
+	    		
+	    }(mui, document));
+	</script>
+</html>

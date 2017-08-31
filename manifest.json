@@ -246,7 +246,8 @@
 					"UI/accordion.html",
 					"pages/UI/index.html",
 					"pages/window/index.html",
-					"pages/event/index.html"
+					"pages/event/index.html",
+					"pages/ajax/index.html"
 				],
 				"priority": 0
 			},
@@ -420,6 +421,14 @@
 				"refer": [
 					"pages/event/detail.html"
 				],
+				"priority": 0
+			},
+			"pages/ajax/index.html": {
+				"resources": [
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},
