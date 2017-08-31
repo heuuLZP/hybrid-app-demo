@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.box {
+				display: inline-block;
+				width: 100%;
+				height: 50px;
+				background: #FF5053;
+				transition: margin-left .1s ease-in-out;  
+				vertical-align: middle;
+			}
+			.box-wrap {
+				padding: 20px;
+			}
+			.item {
+				width: 100%;
+				display: table;
+				white-space: nowrap;
+				overflow: hidden;
+				box-sizing: border-box;
+			}
+			.item button {
+				display: inline-block;
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- header -->
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">单webview模式</h1>
+		</header>
+		<div class="mui-content" id="refresh">
+		<ul id="list" class="mui-table-view">
+		    <li class="mui-table-view-cell mui-media">
+		        <a href="../window/newpage.html">
+		            <img class="mui-media-object mui-pull-right" src="http://placehold.it/40x30">
+		            <div class="mui-media-body">
+		                幸福
+		                <p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+		            </div>
+		        </a>
+		    </li>
+		    <li class="mui-table-view-cell mui-media">
+		        <a href="../window/newpage.html">
+		            <img class="mui-media-object mui-pull-right" src="http://placehold.it/40x30">
+		            <div class="mui-media-body">
+		                木屋
+		                <p class="mui-ellipsis">想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
+		            </div>
+		        </a>
+		    </li>
+		    <li class="mui-table-view-cell mui-media">
+		        <a href="../window/newpage.html">
+		            <img class="mui-media-object mui-pull-right" src="http://placehold.it/40x30">
+		            <div class="mui-media-body">
+		                CBD
+		                <p class="mui-ellipsis">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+		            </div>
+		        </a>
+		    </li>
+		</ul>
+		</div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script>
+	    (function($, doc){
+	    		$.init({
+	    			pullRefresh : {
+			    container:"#refresh",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+			    down : {
+			      style:'circle',//必选，下拉刷新样式，目前支持原生5+ ‘circle’ 样式
+			      color:'#2BD009', //可选，默认“#2BD009” 下拉刷新控件颜色
+			      height:'50px',//可选,默认50px.下拉刷新控件的高度,
+			      range:'100px', //可选 默认100px,控件可下拉拖拽的范围
+			      offset:'0px', //可选 默认0px,下拉刷新控件的起始位置
+			      auto: false,//可选,默认false.首次加载自动上拉刷新一次
+			      callback :refresh //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+			    }
+			  },
+	    			statusBarBackground: '#f7f7f7'
+	    		});
+	    		
+	    		function refresh () {
+	    			setTimeout(function(){
+	    				$.plusReady(function(){
+		    				$.toast('refresh');
+		    				$("#refresh").pullRefresh().endPulldown();
+	    				})
+	    			},100)
+	    			
+	    		}
+	    		
+	    		const aniShow = "pop-in";
+	    		
+	    		//主列表点击事件
+	    		$('#list').on('tap', 'a', function() {
+	    			console.log("11111")
+	    			let href = this.getAttribute('href');
+	    			let id = href;
+
+				//非plus环境，直接走href跳转
+				if(!$.os.plus){
+					location.href = href;
+					return;
+				}
+				
+				let webview_style = {
+					popGesture: "close"
+				}
+				let extras = {};
+				
+				webview_style.statusbar = {
+					background: "#f7f7f7"
+				}
+				
+				let webview = plus.webview.create(this.href,id,webview_style,extras);
+				webview.addEventListener("titleUpdate",function () {
+					setTimeout(function () {
+						webview.show(aniShow,300);
+					},100);
+				});
+	    		})
+	    		
+	    }(mui, document));
+	</script>
+</html>

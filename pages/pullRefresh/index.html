@@ -8,21 +8,23 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style>
+		</style>
 	</head>
 
 	<body>
 		<!-- header -->
 		<header class="mui-bar mui-bar-nav">
 		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-		    <h1 class="mui-title">窗口管理</h1>
+		    <h1 class="mui-title">下拉刷新</h1>
 		</header>
 		<div class="mui-content">
-		    <ul id="list" class="mui-table-view">
+			<ul id="list" class="mui-table-view">
 				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right" href="gesture.html">手势事件</a>
+					<a class="mui-navigate-right" href="single.html">单webview模式</a>
 				</li>
 				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right" href="custom.html">自定义事件</a>
+					<a class="mui-navigate-right" href="double.html">双webview模式</a>
 				</li>
 			</ul>
 		</div>
@@ -31,7 +33,10 @@
 	<script>
 	    (function($, doc){
 	    		$.init({
+	    			
+	    			statusBarBackground: '#f7f7f7'
 	    		});
+	    		
 	    		const aniShow = "pop-in";
 	    		
 	    		//主列表点击事件
@@ -54,16 +59,12 @@
 					background: "#f7f7f7"
 				}
 				
-//				let webview = plus.webview.create(this.href,id,webview_style,extras);
-//				webview.addEventListener("titleUpdate",function () {
-//					setTimeout(function () {
-//						webview.show(aniShow,300);
-//					},100);
-//				});
-				$.openWindow({
-					url: this.href,
-					id: id
-				})
+				let webview = plus.webview.create(this.href,id,webview_style,extras);
+				webview.addEventListener("titleUpdate",function () {
+					setTimeout(function () {
+						webview.show(aniShow,300);
+					},100);
+				});
 	    		})
 	    }(mui, document));
 	</script>

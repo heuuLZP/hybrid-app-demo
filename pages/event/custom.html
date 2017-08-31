@@ -39,65 +39,35 @@
 	</body>
 	<script src="../../js/mui.min.js"></script>
 	<script>
-		mui.init({
-	    			preloadPages:[{
-	    				id:'detail',
-	    				url:'detail.html'
-	    			}]
-	    		});
-	    		
-    		mui.plusReady(function(){
-    			let detailPage = null;
-    			//添加列表项的点击事件
-	    		mui('.mui-content').on('tap', 'a', function(e) {
-	    			let id = this.getAttribute('id');
-	    			//获得详情页面
-	    			if(!detailPage){
-    					// detailPage = plus.webview.getWebviewById('detail');
-    					detailPage = plus.webview.create('detail.html','detail');
-    					console.log(detailPage)
-	    			}
-	    			//触发详情页面的newsId事件
-	    			mui.fire(detailPage,'newsId',{
-	    				id:id
-	    			});
-	    			//打开详情页面
-	    			mui.openWindow({
-	    				id:'detail'
-	    			});
+    		
+	    (function($, doc){
+	    			$.init({
+		    			preloadPages:[{
+		    				id:'detail',
+		    				url:'detail.html'
+		    			}]
+		    		});
+	    		$.plusReady(function(){
+	    			let detailPage = null;
+	    			//添加列表项的点击事件
+		    		$('.mui-content').on('tap', 'a', function(e) {
+		    			let id = this.getAttribute('id');
+		    			//获得详情页面
+		    			if(!detailPage){
+	    					detailPage = plus.webview.getWebviewById('detail');
+	    					console.log(detailPage)
+		    			}
+		    			//触发详情页面的newsId事件
+		    			$.fire(detailPage,'newsId',{
+		    				id:id
+		    			});
+		    			//打开详情页面
+		    			$.openWindow({
+		    				id:'detail'
+		    			});
+		    		})
 	    		})
-    		})
-    		
-    		
-//	    (function($, doc){
-//	    		$.plusReady(function(){
-//	    			$.init({
-//		    			preloadPages:[{
-//		    				id:'detail',
-//		    				url:'detail.html'
-//		    			}]
-//		    		});
-//	    		
-//	    			let detailPage = null;
-//	    			//添加列表项的点击事件
-//		    		$('.mui-content').on('tap', 'a', function(e) {
-//		    			let id = this.getAttribute('id');
-//		    			//获得详情页面
-//		    			if(!detailPage){
-//	    					detailPage = plus.webview.getWebviewById('detail');
-//	    					console.log(detailPage)
-//		    			}
-//		    			//触发详情页面的newsId事件
-//		    			$.fire(detailPage,'newsId',{
-//		    				id:id
-//		    			});
-//		    			//打开详情页面
-//		    			$.openWindow({
-//		    				id:'detail'
-//		    			});
-//		    		})
-//	    		})
-//	    }(mui, document));
+	    }(mui, document));
 	    
 	</script>
 </html>

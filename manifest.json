@@ -247,7 +247,8 @@
 					"pages/UI/index.html",
 					"pages/window/index.html",
 					"pages/event/index.html",
-					"pages/ajax/index.html"
+					"pages/ajax/index.html",
+					"pages/pullRefresh/index.html"
 				],
 				"priority": 0
 			},
@@ -426,6 +427,32 @@
 			"pages/ajax/index.html": {
 				"resources": [
 					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"pages/pullRefresh/index.html": {
+				"resources": [
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [
+					"pages/pullRefresh/single.html"
+				],
+				"priority": 0
+			},
+			"pages/pullRefresh/single.html": {
+				"resources": [
+					"css/mui.min.css"
+				],
+				"refer": [
+					"pages/window/newpage.html"
+				],
+				"priority": 0
+			},
+			"pages/event/detail.html": {
+				"resources": [
 					"css/mui.min.css"
 				],
 				"refer": [],
