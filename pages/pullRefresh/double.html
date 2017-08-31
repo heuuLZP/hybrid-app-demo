@@ -25,6 +25,9 @@
 	<script>
 	    (function($, doc){
 	    		$.init({
+	    			gestureConfig:{
+					doubletap:true
+				},
 	    			subpages:[{
 			      url:"list.html",//下拉刷新内容页面地址
 			      id:"list",//内容页面标志
@@ -34,7 +37,17 @@
 			    }],
 	    			statusBarBackground: '#f7f7f7'
 	    		});
-	    		
+	    		$.plusReady(function () {
+	    			var contentWebview = null;
+				//监听标题栏的双击事件
+				document.querySelector('header').addEventListener('doubletap',function () {
+				  if(contentWebview==null){
+				    contentWebview = plus.webview.currentWebview().children()[0];
+				  }
+				  //内容区滚动到顶部
+				  contentWebview.evalJS("mui('#refreshContainer').pullRefresh().scrollTo(0,0,100)");
+				});
+	    		})
 	    		
 	    }(mui, document));
 	</script>

@@ -466,6 +466,13 @@
 				],
 				"refer": [],
 				"priority": 0
+			},
+			"pages/pullRefresh/list.html": {
+				"resources": [
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
 			}
 		},
 		"idle": {
