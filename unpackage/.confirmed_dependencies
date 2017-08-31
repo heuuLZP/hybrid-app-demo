@@ -169,8 +169,17 @@
 			"fonts/mui.ttf"
 		],
 		"refer": [
-			"pages/event/gesture.html"
+			"pages/event/gesture.html",
+			"pages/event/custom.html"
 		],
 		"priority": 0
+	},
+	"pages/event/custom.html": {
+		"resources": [
+			"css/mui.min.css"
+		],
+		"refer": [
+			"pages/event/detail.html"
+		]
 	}
 }
