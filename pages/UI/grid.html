@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style>
+			ul, li {
+				list-style: none;
+			}
+			.section {
+				padding: 20px;;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- header -->
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">grid</h1>
+		</header>
+		<!-- content -->
+		<div class="mui-content">
+			<div class="section">
+				<h5>并排两列</h5>
+			</div>
+			<div class="mui-row">
+		        <div class="mui-col-sm-6 mui-col-xs-6">
+		            <li class="mui-table-view-cell">
+		                <a class="mui-navigate-right">
+		                    Item 1    
+		                </a>
+		            </li>
+		        </div>
+		        <div class="mui-col-sm-6 mui-col-xs-6">
+		            <li class="mui-table-view-cell">
+		                <a class="mui-navigate-right">
+		                    Item 1
+		                </a>
+		            </li>
+		        </div>
+		    </div>
+		    <div class="section">
+				<h5>超过12列</h5>
+			</div>
+			<div class="mui-row">
+		        <div class="mui-col-sm-8 mui-col-xs-5">
+		            <li class="mui-table-view-cell">
+		                <a class="mui-navigate-right">
+		                    Item 1    
+		                </a>
+		            </li>
+		        </div>
+		        <div class="mui-col-sm-6 mui-col-xs-6">
+		            <li class="mui-table-view-cell">
+		                <a class="mui-navigate-right">
+		                    Item 1
+		                </a>
+		            </li>
+		        </div>
+		    </div>
+		    <div class="section">
+				<h5>设置padding</h5>
+			</div>
+		    <div class="mui-row">
+		        <div class="mui-col-sm-6 mui-col-xs-6" style="padding-right: 20px;">
+		            <li class="mui-table-view-cell">
+		                <a class="mui-navigate-right">
+		                    Item 1    
+		                </a>
+		            </li>
+		        </div>
+		        <div class="mui-col-sm-6 mui-col-xs-6">
+		            <li class="mui-table-view-cell">
+		                <a class="mui-navigate-right">
+		                    Item 1
+		                </a>
+		            </li>
+		        </div>
+		    </div>
+		</div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script>
+	    (function($, doc){
+	    		$.init({
+	    			statusBarBackground: '#f7f7f7'
+	    		});
+	    		
+	    }(mui, document));
+	</script>
+</html>

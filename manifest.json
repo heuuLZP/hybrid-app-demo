@@ -287,7 +287,8 @@
 					"pages/UI/cardview.html",
 					"pages/UI/checkbox.html",
 					"pages/UI/dialog.html",
-					"pages/UI/gallery.html"
+					"pages/UI/gallery.html",
+					"pages/UI/grid.html"
 				],
 				"priority": 0
 			},
@@ -509,6 +510,13 @@
 				"priority": 0
 			},
 			"pages/UI/gallery.html": {
+				"resources": [
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"pages/UI/grid.html": {
 				"resources": [
 					"css/mui.min.css"
 				],
