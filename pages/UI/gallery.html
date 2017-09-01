@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.mui-slider-item img {
+				height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- header -->
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">gallery</h1>
+		</header>
+		<!-- content -->
+		<div class="mui-content">
+			<div class="mui-slider">
+			  <div class="mui-slider-group mui-slider-loop">
+			    <!--支持循环，需要重复图片节点-->
+			    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="http://fs.gateway.frdic.com/store_user/corner%2F5117430b-6b55-47ec-8ffa-59c09286360d.jpg" /></a></div>
+			    <div class="mui-slider-item"><a href="#"><img src="http://desk.fd.zol-img.com.cn/t_s960x600c5/g5/M00/02/03/ChMkJlbKx2qIKPxiAAlXILFmr4gAALHzQFig2UACVc4500.jpg" /></a></div>
+			    <div class="mui-slider-item"><a href="#"><img src="http://www.ran-wen.com/d/file/2016-05-13/9cac0f29fdfda1ec6445a42d9343cce9.jpg" /></a></div>
+			    <div class="mui-slider-item"><a href="#"><img src="http://fs.gateway.frdic.com/store_user/corner%2F5117430b-6b55-47ec-8ffa-59c09286360d.jpg" /></a></div>
+			    <!--支持循环，需要重复图片节点-->
+			    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="http://desk.fd.zol-img.com.cn/t_s960x600c5/g5/M00/02/03/ChMkJlbKx2qIKPxiAAlXILFmr4gAALHzQFig2UACVc4500.jpg" /></a></div>
+			  </div>
+			  <div class="mui-slider-indicator">
+	            <div class="mui-indicator mui-active"></div>
+	            <div class="mui-indicator"></div>
+	            <div class="mui-indicator"></div>
+	          </div>
+			</div>
+				
+		</div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script>
+	    (function($, doc){
+	    		$.init({
+	    			statusBarBackground: '#f7f7f7'
+	    		});
+	    		//获得slider插件对象
+			var gallery = mui('.mui-slider');
+			gallery.slider({
+			  interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
+			});
+	    }(mui, document));
+	</script>
+</html>
