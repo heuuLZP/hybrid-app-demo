@@ -281,7 +281,8 @@
 				],
 				"refer": [
 					"pages/UI/accordion.html",
-					"pages/UI/actionsheet.html"
+					"pages/UI/actionsheet.html",
+					"pages/UI/badges.html"
 				],
 				"priority": 0
 			},

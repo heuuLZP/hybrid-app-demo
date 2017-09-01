@@ -18,12 +18,6 @@
 		</header>
 		<div class="mui-content">
 		    <ul id="list" class="mui-table-view">
-				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right" href="accordion.html">accordion(折叠面板)</a>
-				</li>
-				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right" href="actionsheet.html">actionsheet(操作表)</a>
-				</li>
 			</ul>
 		</div>
 	</body>
@@ -63,6 +57,35 @@
 					},100);
 				});
 	    		})
+	    		
+	    		//填充数据
+	    		const array = [
+	    			{
+	    				name: "accordion(折叠面板)",
+	    				href: "accordion.html"
+	    			},
+	    			{
+	    				name: "actionsheet(操作表)",
+	    				href: "actionsheet.html"
+	    			},
+	    			{
+	    				name: "badges(数字角标)",
+	    				href: "badges.html"
+	    			}
+	    		]
+	    		
+	    		let table = document.body.querySelector(".mui-table-view");
+	    		let ul = "";
+	    		for(let item of array) {
+	    			let li = `
+		    			<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="${item.href}">${item.name}</a>
+					</li>
+	    			`;
+	    			ul += li;
+	    		}
+	    		table.innerHTML = ul;
+	    		
 	    }(mui, document));
 	</script>
 </html>
