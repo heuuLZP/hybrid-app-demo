@@ -283,7 +283,8 @@
 					"pages/UI/accordion.html",
 					"pages/UI/actionsheet.html",
 					"pages/UI/badges.html",
-					"pages/UI/button.html"
+					"pages/UI/button.html",
+					"pages/UI/cardview.html"
 				],
 				"priority": 0
 			},
@@ -477,6 +478,13 @@
 				"priority": 0
 			},
 			"pages/UI/button.html": {
+				"resources": [
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"pages/UI/cardview.html": {
 				"resources": [
 					"css/mui.min.css"
 				],
