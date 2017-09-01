@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.result {
+				padding: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- header -->
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">badge</h1>
+		</header>
+		<!-- content -->
+		<div class="mui-content">
+			<div class="input-wrap">
+				<div class="mui-input-row mui-checkbox">
+				  <label>checkbox示例</label>
+				  <input name="checkbox1" value="Item 1" type="checkbox">
+				</div>	
+				<div class="mui-input-row mui-checkbox">
+				  <label>checkbox示例</label>
+				  <input name="checkbox1" value="Item 2" type="checkbox">
+				</div>	
+				<div class="mui-input-row mui-checkbox">
+				  <label>checkbox示例</label>
+				  <input name="checkbox1" value="Item 3" type="checkbox">
+				</div>	
+			</div>
+			
+			<p class="result">
+				
+			</p>
+			<br />
+			<div class="mui-input-row mui-checkbox mui-left">
+			  <label>checkbox左侧显示示例</label>
+			  <input name="checkbox2" value="Item 1" type="checkbox">
+			</div>
+			<div class="mui-input-row mui-checkbox mui-left">
+			  <label>checkbox左侧显示示例</label>
+			  <input name="checkbox2" value="Item 1" type="checkbox">
+			</div>
+			<div class="mui-input-row mui-checkbox mui-left">
+			  <label>checkbox左侧显示示例</label>
+			  <input name="checkbox2" value="Item 1" type="checkbox">
+			</div>
+			<br />
+			<div class="mui-input-row mui-checkbox mui-left">
+			  <label>checkbox禁用示例</label>
+			  <input name="checkbox3" value="Item 1" type="checkbox" disabled>
+			</div>
+		</div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script>
+	    (function($, doc){
+	    		$.init({
+	    			statusBarBackground: '#f7f7f7'
+	    		});
+	    		let str = [];
+	    		$(".input-wrap").on("change","input",function () {
+		    		let result = document.body.querySelector(".result");
+		    		
+		    		if(this.checked && str.indexOf(this.value) === -1) {
+		    				str.push(this.value);
+		    		} else {
+		    			str.splice(str.indexOf(this.value),1);
+		    		}
+		    		result.innerHTML = str.join(" ");
+	    		})
+	    		
+	    }(mui, document));
+	</script>
+</html>

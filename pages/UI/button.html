@@ -45,9 +45,11 @@
 				<button type="button" class="mui-btn mui-btn-royal mui-btn-outlined">紫色</button> 
 				<br />
 				<h5>加载中按钮</h5>
-				<button type="button" data-loading-icon="mui-spinner mui-spinner-red" class="mui-btn mui-btn-primary mui-btn-outlined mui-btn-warning">确认</button>
-				<button type="button" data-loading-text="提交中" class="mui-btn mui-btn-success">确认</button>
-				<button type="button" data-loading-icon-position="right" class="mui-btn mui-btn-warning">确认</button>
+				<button type="button" data-loading-icon="mui-spinner mui-spinner-red" class="loading mui-btn mui-btn-primary mui-btn-outlined mui-btn-warning">确认</button>
+				<button type="button" data-loading-text="提交中" class="loading mui-btn mui-btn-success">确认</button>
+				<button type="button" data-loading-icon-position="right" class="loading mui-btn mui-btn-warning">确认</button>
+				<h5>disabled按钮</h5>
+				<button type="button" data-loading-icon="mui-spinner mui-spinner-red" class="loading mui-btn mui-btn-primary mui-btn-outlined mui-btn-warning mui-disabled">确认</button>
 			</div>
 		</div>
 	</body>
@@ -57,7 +59,7 @@
 	    		$.init({
 	    			statusBarBackground: '#f7f7f7'
 	    		});
-	    		$(document.body).on('tap', '.mui-btn', function(e) {
+	    		$(document.body).on('tap', '.loading', function(e) {
 		    $(this).button('loading');
 		    setTimeout(function() {
 		        $(this).button('reset');

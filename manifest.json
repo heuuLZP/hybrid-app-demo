@@ -284,7 +284,8 @@
 					"pages/UI/actionsheet.html",
 					"pages/UI/badges.html",
 					"pages/UI/button.html",
-					"pages/UI/cardview.html"
+					"pages/UI/cardview.html",
+					"pages/UI/checkbox.html"
 				],
 				"priority": 0
 			},
@@ -485,6 +486,13 @@
 				"priority": 0
 			},
 			"pages/UI/cardview.html": {
+				"resources": [
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"pages/UI/checkbox.html": {
 				"resources": [
 					"css/mui.min.css"
 				],
