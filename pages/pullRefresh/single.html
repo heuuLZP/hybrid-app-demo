@@ -18,7 +18,7 @@
 		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 		    <h1 class="mui-title">单webview模式</h1>
 		</header>
-		<div class="mui-content" id="refresh">
+		<div class="mui-content mui-scroll-wrapper" id="refresh">
 			<ul id="list" class="mui-table-view">
 			    <li class="mui-table-view-cell mui-media">
 			        <a href="../window/newpage.html">
@@ -55,7 +55,14 @@
 	    (function($, doc){
 	    		$.init({
 	    			pullRefresh : {
-			    container:"#list",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+			    container:"#refresh",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+			    up : {
+			      height:50,//可选.默认50.触发上拉加载拖动距离
+			      auto:false,//可选,默认false.自动上拉加载一次
+			      contentrefresh : "正在加载...",//可选，正在加载状态时，上拉加载控件上显示的标题内容
+			      contentnomore:'没有更多数据了',//可选，请求完毕若没有更多数据时显示的提醒内容；
+			      callback :loadMore //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+			    },
 			    down : {
 			      style:'circle',//必选，下拉刷新样式，目前支持原生5+ ‘circle’ 样式
 			      color:'#2BD009', //可选，默认“#2BD009” 下拉刷新控件颜色
@@ -72,8 +79,31 @@
 	    		function refresh () {
 	    			setTimeout(function(){
 	    				$.plusReady(function(){
+	    					addData()
 		    				$.toast('refresh');
-		    				$("#list").pullRefresh().endPulldown();
+		    				$("#refresh").pullRefresh().endPulldownToRefresh();
+	    				})
+	    			},100)
+	    			
+	    		}
+	    		
+	    		function addData() {
+				var table = document.body.querySelector('.mui-table-view');
+				var cells = document.body.querySelectorAll('.mui-table-view-cell');
+				for(var i = cells.length, len = i + 5; i < len; i++) {
+					var li = document.createElement('li');
+					li.className = 'mui-table-view-cell';
+					li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+					//下拉刷新，新纪录插到最前面；
+					table.insertBefore(li, table.firstChild);
+				}
+			}
+	    		
+	    		function loadMore () {
+	    			setTimeout(function(){
+	    				$.plusReady(function(){
+		    				$.toast('loadMore');
+		    				$("#refresh").pullRefresh().endPullupToRefresh();
 	    				})
 	    			},100)
 	    			

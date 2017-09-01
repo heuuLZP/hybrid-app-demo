@@ -53,6 +53,13 @@
 	    		$.init({
 	    			pullRefresh : {
 				    container:"#refreshContainer",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+				    up : {
+				      height:50,//可选.默认50.触发上拉加载拖动距离
+				      auto:false,//可选,默认false.自动上拉加载一次
+				      contentrefresh : "正在加载...",//可选，正在加载状态时，上拉加载控件上显示的标题内容
+				      contentnomore:'没有更多数据了',//可选，请求完毕若没有更多数据时显示的提醒内容；
+				      callback :loadMore //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+				    },
 				    down: {
 				      height:50,//可选,默认50.触发下拉刷新拖动距离,
 				      auto: false,//可选,默认false.首次加载自动下拉刷新一次
@@ -67,8 +74,29 @@
 	    		
 	    		function refresh () {
 	    			setTimeout(function(){
+	    				addData()
 	    				$.toast('refresh');
-		    			$('#refreshContainer').pullRefresh().endPulldownToRefresh()();
+		    			$('#refreshContainer').pullRefresh().endPulldownToRefresh();
+	    			},100)
+	    			
+	    		}
+	    		function addData() {
+				var table = document.body.querySelector('.mui-table-view');
+				var cells = document.body.querySelectorAll('.mui-table-view-cell');
+				for(var i = cells.length, len = i + 5; i < len; i++) {
+					var li = document.createElement('li');
+					li.className = 'mui-table-view-cell';
+					li.innerHTML = '<a class="mui-navigate-right">Item ' + (i + 1) + '</a>';
+					//下拉刷新，新纪录插到最前面；
+					table.insertBefore(li, table.firstChild);
+				}
+			}
+	    		function loadMore () {
+	    			setTimeout(function(){
+	    				$.plusReady(function(){
+		    				$.toast('loadMore');
+		    				$("#refreshContainer").pullRefresh().endPullupToRefresh();
+	    				})
 	    			},100)
 	    			
 	    		}
