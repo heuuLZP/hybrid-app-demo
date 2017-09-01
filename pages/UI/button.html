@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.button-wrap {
+				padding: 20px;
+			}
+			.button-wrap button {
+				margin-right: 10px;
+				margin-bottom: 10px;
+			}
+			.mui-spinner-red:after
+			{
+			    background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PScwIDAgMTIwIDEyMCcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB4bWxuczp4bGluaz0naHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayc+PGRlZnM+PGxpbmUgaWQ9J2wnIHgxPSc2MCcgeDI9JzYwJyB5MT0nNycgeTI9JzI3JyBzdHJva2U9J3JlZCcgc3Ryb2tlLXdpZHRoPScxMScgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJy8+PC9kZWZzPjxnPjx1c2UgeGxpbms6aHJlZj0nI2wnIG9wYWNpdHk9Jy4yNycvPjx1c2UgeGxpbms6aHJlZj0nI2wnIG9wYWNpdHk9Jy4yNycgdHJhbnNmb3JtPSdyb3RhdGUoMzAgNjAsNjApJy8+PHVzZSB4bGluazpocmVmPScjbCcgb3BhY2l0eT0nLjI3JyB0cmFuc2Zvcm09J3JvdGF0ZSg2MCA2MCw2MCknLz48dXNlIHhsaW5rOmhyZWY9JyNsJyBvcGFjaXR5PScuMjcnIHRyYW5zZm9ybT0ncm90YXRlKDkwIDYwLDYwKScvPjx1c2UgeGxpbms6aHJlZj0nI2wnIG9wYWNpdHk9Jy4yNycgdHJhbnNmb3JtPSdyb3RhdGUoMTIwIDYwLDYwKScvPjx1c2UgeGxpbms6aHJlZj0nI2wnIG9wYWNpdHk9Jy4yNycgdHJhbnNmb3JtPSdyb3RhdGUoMTUwIDYwLDYwKScvPjx1c2UgeGxpbms6aHJlZj0nI2wnIG9wYWNpdHk9Jy4zNycgdHJhbnNmb3JtPSdyb3RhdGUoMTgwIDYwLDYwKScvPjx1c2UgeGxpbms6aHJlZj0nI2wnIG9wYWNpdHk9Jy40NicgdHJhbnNmb3JtPSdyb3RhdGUoMjEwIDYwLDYwKScvPjx1c2UgeGxpbms6aHJlZj0nI2wnIG9wYWNpdHk9Jy41NicgdHJhbnNmb3JtPSdyb3RhdGUoMjQwIDYwLDYwKScvPjx1c2UgeGxpbms6aHJlZj0nI2wnIG9wYWNpdHk9Jy42NicgdHJhbnNmb3JtPSdyb3RhdGUoMjcwIDYwLDYwKScvPjx1c2UgeGxpbms6aHJlZj0nI2wnIG9wYWNpdHk9Jy43NScgdHJhbnNmb3JtPSdyb3RhdGUoMzAwIDYwLDYwKScvPjx1c2UgeGxpbms6aHJlZj0nI2wnIG9wYWNpdHk9Jy44NScgdHJhbnNmb3JtPSdyb3RhdGUoMzMwIDYwLDYwKScvPjwvZz48L3N2Zz4=')			
+			}
+		</style>
+	</head>
+	<body>
+		<!-- header -->
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">badge</h1>
+		</header>
+		<!-- content -->
+		<div class="mui-content">
+			<div class="button-wrap">
+				<button type="button" class="mui-btn">默认</button>
+				<button type="button" class="mui-btn mui-btn-primary">蓝色</button>
+				<button type="button" class="mui-btn mui-btn-success">绿色</button>
+				<button type="button" class="mui-btn mui-btn-warning">黄色</button>
+				<button type="button" class="mui-btn mui-btn-danger">红色</button>
+				<button type="button" class="mui-btn mui-btn-royal">紫色</button> 
+				<br />
+				<button type="button" class="mui-btn mui-btn-outlined">默认</button>
+				<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined">蓝色</button>
+				<button type="button" class="mui-btn mui-btn-success mui-btn-outlined">绿色</button>
+				<button type="button" class="mui-btn mui-btn-warning mui-btn-outlined">黄色</button>
+				<button type="button" class="mui-btn mui-btn-danger mui-btn-outlined">红色</button>
+				<button type="button" class="mui-btn mui-btn-royal mui-btn-outlined">紫色</button> 
+				<br />
+				<h5>加载中按钮</h5>
+				<button type="button" data-loading-icon="mui-spinner mui-spinner-red" class="mui-btn mui-btn-primary mui-btn-outlined mui-btn-warning">确认</button>
+				<button type="button" data-loading-text="提交中" class="mui-btn mui-btn-success">确认</button>
+				<button type="button" data-loading-icon-position="right" class="mui-btn mui-btn-warning">确认</button>
+			</div>
+		</div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script>
+	    (function($, doc){
+	    		$.init({
+	    			statusBarBackground: '#f7f7f7'
+	    		});
+	    		$(document.body).on('tap', '.mui-btn', function(e) {
+		    $(this).button('loading');
+		    setTimeout(function() {
+		        $(this).button('reset');
+		    }.bind(this), 2000);
+		});
+	    }(mui, document));
+	</script>
+</html>
