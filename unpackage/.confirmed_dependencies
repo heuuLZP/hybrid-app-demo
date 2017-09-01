@@ -56,7 +56,8 @@
 			"pages/UI/badges.html",
 			"pages/UI/button.html",
 			"pages/UI/cardview.html",
-			"pages/UI/checkbox.html"
+			"pages/UI/checkbox.html",
+			"pages/UI/dialog.html"
 		],
 		"priority": 0
 	},
@@ -243,6 +244,11 @@
 		]
 	},
 	"pages/UI/checkbox.html": {
+		"resources": [
+			"css/mui.min.css"
+		]
+	},
+	"pages/UI/dialog.html": {
 		"resources": [
 			"css/mui.min.css"
 		]
