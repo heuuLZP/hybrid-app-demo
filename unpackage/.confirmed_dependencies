@@ -63,7 +63,8 @@
 			"pages/UI/icon.html",
 			"pages/UI/input.html",
 			"pages/UI/list.html",
-			"pages/UI/mask.html"
+			"pages/UI/mask.html",
+			"pages/UI/numbox.html"
 		],
 		"priority": 0
 	},
@@ -286,6 +287,11 @@
 		]
 	},
 	"pages/UI/mask.html": {
+		"resources": [
+			"css/mui.min.css"
+		]
+	},
+	"pages/UI/numbox.html": {
 		"resources": [
 			"css/mui.min.css"
 		]

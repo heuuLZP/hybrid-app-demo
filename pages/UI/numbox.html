@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.section {
+				padding: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- header -->
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">numbox</h1>
+		</header>
+		<!-- content -->
+		<div class="mui-content">
+			<div class="section">
+				<div class="mui-numbox" data-numbox-step='10' data-numbox-min='0' data-numbox-max='100'>
+				  <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+				  <input class="mui-numbox-input" type="number" />
+				  <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+				</div>		
+			</div>
+			<div class="section">
+				<button type="button" name="get" class="mui-btn mui-btn-blue mui-btn-outlined">获取当前值</button>
+				<button type="button" name="set" class="mui-btn mui-btn-blue mui-btn-outlined">改变当前值</button>
+				<button type="button" name="setOption" class="mui-btn mui-btn-blue mui-btn-outlined">改变步长</button>
+			</div>
+		</div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script>
+	    (function($, doc){
+	    		$.init({
+	    			statusBarBackground: '#f7f7f7'
+	    		});
+	    		$.plusReady(function(){
+	    			let btn_get = document.body.querySelector("button[name='get']");
+	    			let btn_set = document.body.querySelector("button[name='set']");
+	    			let btn_setOption = document.body.querySelector("button[name='setOption']");
+	    		
+		    		btn_get.addEventListener("tap",function(){
+		    			let value = $(".mui-numbox").numbox().getValue();
+		    			$.toast("" + value);
+		    		})
+
+		    		btn_set.addEventListener("tap",function(){
+		    			let value = $(".mui-numbox").numbox().setValue(100);
+		    			$.toast("设置成功");
+		    		})
+
+		    		btn_setOption.addEventListener("tap",function(){
+		    			let value = $(".mui-numbox").numbox().setOption('step',5);
+		    			$.toast("设置成功");
+		    		})
+
+	    		})
+	    	}(mui, document));
+	</script>
+</html>
