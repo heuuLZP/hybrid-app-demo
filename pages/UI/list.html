@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.section {
+				padding: 20px;
+			}
+			/*点击变蓝色高亮*/
+			.mui-table-view-cell.mui-active{
+				background-color: #FFCCCC;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- header -->
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">list</h1>
+		</header>
+		<!-- content -->
+		<div class="mui-content">
+			<div class="section">
+				<h5>普通list</h5>
+			</div>
+			<ul class="mui-table-view">
+			    <li class="mui-table-view-cell">Item 1</li>
+			    <li class="mui-table-view-cell">Item 2</li>
+			    <li class="mui-table-view-cell">Item 3</li>
+			</ul>
+			<div class="section">
+				<h5>自定义列表高亮颜色</h5>
+			</div>
+			<ul class="mui-table-view">
+			    <li class="mui-table-view-cell mui-active">Item 1</li>
+			    <li class="mui-table-view-cell">Item 2</li>
+			    <li class="mui-table-view-cell">Item 3</li>
+			</ul>
+			<div class="section">
+				<h5>右侧添加导航箭头</h5>
+			</div>
+			<ul class="mui-table-view">
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right">
+		                Item 1
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right">
+		                 Item 2
+		            </a>
+		        </li>
+		        <li class="mui-table-view-cell">
+		            <a class="mui-navigate-right">
+		                 Item 3
+		            </a>
+		        </li>
+		    </ul>
+			<div class="section">
+				<h5>右侧添加数字角标</h5>
+			</div>
+			<ul class="mui-table-view">
+			    <li class="mui-table-view-cell">Item 1 
+			        <span class="mui-badge mui-badge-primary">11</span>
+			    </li>
+			    <li class="mui-table-view-cell">Item 2 
+			        <span class="mui-badge mui-badge-success">22</span>
+			    </li>
+			    <li class="mui-table-view-cell">Item 3 
+			        <span class="mui-badge">33</span>
+			    </li>
+			</ul>
+			<div class="section">
+				<h5>图文列表(居左)</h5>
+			</div>
+			<ul class="mui-table-view">
+			    <li class="mui-table-view-cell mui-media">
+			        <a href="javascript:;">
+			            <img class="mui-media-object mui-pull-left" src="http://a3.att.hudong.com/48/45/01100000000000144728459490363_s.jpg">
+			            <div class="mui-media-body">
+			                幸福
+			                <p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+			            </div>
+			        </a>
+			    </li>
+			    <li class="mui-table-view-cell mui-media">
+			        <a href="javascript:;">
+			            <img class="mui-media-object mui-pull-left" src="http://a3.att.hudong.com/48/45/01100000000000144728459490363_s.jpg">
+			            <div class="mui-media-body">
+			                木屋
+			                <p class="mui-ellipsis">想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
+			            </div>
+			        </a>
+			    </li>
+			    <li class="mui-table-view-cell mui-media">
+			        <a href="javascript:;">
+			            <img class="mui-media-object mui-pull-left" src="http://a3.att.hudong.com/48/45/01100000000000144728459490363_s.jpg">
+			            <div class="mui-media-body">
+			                CBD
+			                <p class="mui-ellipsis">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+			            </div>
+			        </a>
+			    </li>
+			</ul>
+			<div class="section">
+				<h5>图文列表(居右)</h5>
+			</div>
+			<ul class="mui-table-view">
+			    <li class="mui-table-view-cell mui-media">
+			        <a href="javascript:;">
+			            <img class="mui-media-object mui-pull-right" src="http://a3.att.hudong.com/48/45/01100000000000144728459490363_s.jpg">
+			            <div class="mui-media-body">
+			                幸福
+			                <p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+			            </div>
+			        </a>
+			    </li>
+			    <li class="mui-table-view-cell mui-media">
+			        <a href="javascript:;">
+			            <img class="mui-media-object mui-pull-right" src="http://a3.att.hudong.com/48/45/01100000000000144728459490363_s.jpg">
+			            <div class="mui-media-body">
+			                木屋
+			                <p class="mui-ellipsis">想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
+			            </div>
+			        </a>
+			    </li>
+			    <li class="mui-table-view-cell mui-media">
+			        <a href="javascript:;">
+			            <img class="mui-media-object mui-pull-right" src="http://a3.att.hudong.com/48/45/01100000000000144728459490363_s.jpg">
+			            <div class="mui-media-body">
+			                CBD
+			                <p class="mui-ellipsis">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+			            </div>
+			        </a>
+			    </li>
+			</ul>
+		</div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script>
+	    (function($, doc){
+	    		$.init({
+	    			statusBarBackground: '#f7f7f7'
+	    		});
+	    		
+	    }(mui, document));
+	</script>
+</html>

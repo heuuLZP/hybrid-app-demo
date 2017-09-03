@@ -61,7 +61,8 @@
 			"pages/UI/gallery.html",
 			"pages/UI/grid.html",
 			"pages/UI/icon.html",
-			"pages/UI/input.html"
+			"pages/UI/input.html",
+			"pages/UI/list.html"
 		],
 		"priority": 0
 	},
@@ -274,6 +275,11 @@
 		]
 	},
 	"pages/UI/input.html": {
+		"resources": [
+			"css/mui.min.css"
+		]
+	},
+	"pages/UI/list.html": {
 		"resources": [
 			"css/mui.min.css"
 		]
