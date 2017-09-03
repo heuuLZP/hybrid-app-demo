@@ -62,7 +62,8 @@
 			"pages/UI/grid.html",
 			"pages/UI/icon.html",
 			"pages/UI/input.html",
-			"pages/UI/list.html"
+			"pages/UI/list.html",
+			"pages/UI/mask.html"
 		],
 		"priority": 0
 	},
@@ -280,6 +281,11 @@
 		]
 	},
 	"pages/UI/list.html": {
+		"resources": [
+			"css/mui.min.css"
+		]
+	},
+	"pages/UI/mask.html": {
 		"resources": [
 			"css/mui.min.css"
 		]
