@@ -1,125 +1,73 @@
 {
   "pages/window/init.html": {
     "href": "pages/window/init.html",
-    "resources": [
-      "js/mui.min.js",
-      "fonts/mui.ttf"
-    ],
+    "resources": [],
     "priority": 1
   },
   "pages/window/list.html": {
     "href": "pages/window/list.html",
-    "resources": [
-      "css/mui.min.css",
-      "fonts/mui.ttf",
-      "js/mui.min.js"
-    ],
+    "resources": [],
     "priority": 3
   },
   "pages/window/subpages.html": {
     "href": "pages/window/subpages.html",
-    "resources": [
-      "js/mui.min.js",
-      "fonts/mui.ttf"
-    ],
-    "refer": [
-      "pages/window/subpages.html"
-    ],
+    "resources": [],
+    "refer": [],
     "priority": 2
   },
   "pages/window/newpage-2.html": {
     "href": "pages/window/newpage-2.html",
-    "resources": [
-      "css/mui.min.css",
-      "fonts/mui.ttf",
-      "js/mui.min.js"
-    ],
+    "resources": [],
     "priority": 3
   },
   "pages/window/newpage-3.html": {
     "href": "pages/window/newpage-3.html",
-    "resources": [
-      "css/mui.min.css",
-      "fonts/mui.ttf",
-      "js/mui.min.js"
-    ],
+    "resources": [],
     "priority": 4
   },
   "pages/window/newpage.html": {
     "href": "pages/window/newpage.html",
-    "resources": [
-      "css/mui.min.css",
-      "fonts/mui.ttf",
-      "js/mui.min.js"
-    ],
+    "resources": [],
     "priority": 5
   },
   "pages/window/openWindow.html": {
     "href": "pages/window/openWindow.html",
-    "resources": [
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "fonts/mui.ttf"
-    ],
-    "refer": [
-      "pages/window/newpage-2.html",
-      "pages/window/newpage-3.html",
-      "pages/window/newpage.html"
-    ],
+    "resources": [],
+    "refer": [],
     "priority": 3
   },
   "pages/window/close.html": {
     "href": "pages/window/close.html",
-    "resources": [
-      "js/mui.min.js",
-      "fonts/mui.ttf"
-    ],
+    "resources": [],
     "priority": 4
   },
   "pages/window/preload.html": {
     "href": "pages/window/preload.html",
-    "resources": [
-      "js/mui.min.js",
-      "fonts/mui.ttf"
-    ],
+    "resources": [],
     "refer": [],
     "priority": 5
   },
   "pages/window/index.html": {
     "href": "pages/window/index.html",
     "resources": [],
-    "refer": [
-      "pages/window/openWindow.html"
-    ],
+    "refer": [],
     "priority": 1
   },
   "pages/event/gesture.html": {
     "href": "pages/event/gesture.html",
-    "resources": [
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "fonts/mui.ttf"
-    ],
+    "resources": [],
     "priority": 2
   },
   "pages/event/index.html": {
     "href": "pages/event/index.html",
-    "resources": [
-      "js/mui.min.js",
-      "css/mui.min.css",
-      "fonts/mui.ttf"
-    ],
-    "refer": [
-      "pages/event/gesture.html"
-    ],
+    "resources": [],
+    "refer": [],
     "priority": 2
   },
   "index.html": {
     "href": "index.html",
     "resources": [],
-    "refer": [
-      "pages/event/index.html"
-    ],
+    "refer": [],
     "priority": 0
   }
 }
