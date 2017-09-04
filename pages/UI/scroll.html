@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.section {
+				padding: 20px;
+			}
+			.wrap {
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- header -->
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">scroll</h1>
+		</header>
+		<!-- content -->
+		<div class="mui-content">
+			<div class="section">
+				<h5>区域滚动(水平)</h5>
+			</div>
+			<div class="wrap">
+				<div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+			    <div class="mui-scroll">
+			        <a class="mui-control-item mui-active">
+			            推荐
+			        </a>
+			        <a class="mui-control-item">
+			            热点
+			        </a>
+			        <a class="mui-control-item">
+			            北京
+			        </a>
+			        <a class="mui-control-item">
+			            社会
+			        </a>
+			        <a class="mui-control-item">
+			            娱乐
+			        </a>
+			        <a class="mui-control-item">
+			            科技
+			        </a>
+			    </div>
+			</div>
+			</div>
+			
+			<div class="section">
+				<h5>区域滚动(垂直)</h5>
+			</div>
+			<div class="wrap">
+				<div class="mui-scroll-wrapper" style="height: 150px;">
+				    <div class="mui-scroll">
+				        <ul class="mui-table-view">
+				            <li class="mui-table-view-cell mui-media">
+				                <a href="javascript:;">
+				                    <img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
+				                    <div class="mui-media-body">
+				                        幸福
+				                        <p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+				                    </div>
+				                </a>
+				            </li>
+				            <li class="mui-table-view-cell mui-media">
+				                <a href="javascript:;">
+				                    <img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
+				                    <div class="mui-media-body">
+				                        木屋
+				                        <p class="mui-ellipsis">想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
+				                    </div>
+				                </a>
+				            </li>
+				            <li class="mui-table-view-cell mui-media">
+				                <a href="javascript:;">
+				                    <img class="mui-media-object mui-pull-left" src="http://placehold.it/40x30">
+				                    <div class="mui-media-body">
+				                        CBD
+				                        <p class="mui-ellipsis">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+				                    </div>
+				                </a>
+				            </li>
+				        </ul>
+				    </div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script>
+	    (function($, doc){
+	    		$.init({
+	    			statusBarBackground: '#f7f7f7'
+	    		});
+	    		$('.mui-scroll-wrapper').scroll({
+				scrollY: true, //是否竖向滚动
+				 scrollX: false, //是否横向滚动
+				 startX: 0, //初始化时滚动至x
+				 startY: 0, //初始化时滚动至y
+				 indicators: true, //是否显示滚动条
+				 deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+				 bounce: true //是否启用回弹
+			});
+	    }(mui, document));
+	</script>
+</html>
