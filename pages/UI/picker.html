@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link href="../../css/mui.picker.min.css" rel="stylesheet" />
+		<style>
+			.section {
+				padding: 20px;
+			}
+			.section button {
+				margin-bottom: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- header -->
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">picker</h1>
+		</header>
+		<!-- content -->
+		<div class="mui-content">
+			<div class="section">
+				<button type="button" name="picker" class="mui-btn mui-btn-blue mui-btn-outlined">picker</button>
+				<button type="button" name="picker-2" class="mui-btn mui-btn-blue mui-btn-outlined">picker2级</button>
+				<button type="button" name="picker-3" class="mui-btn mui-btn-blue mui-btn-outlined">DtPicker完整视图</button>
+				<button type="button" name="picker-4" class="mui-btn mui-btn-blue mui-btn-outlined">DtPicker时间视图</button>
+			</div>
+			<div class="section result-1">
+				一级选择结果：
+			</div>	
+			<div class="section result-2">
+				二级选择结果：
+			</div>	
+			<div class="section result-3">
+				日期选择结果：
+			</div>
+			<div class="section result-4">
+				时间选择结果：
+			</div>	
+		</div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/mui.picker.min.js"></script>
+	<script>
+	    (function($, doc){
+	    		$.init({
+	    			statusBarBackground: '#f7f7f7'
+	    		});
+	    		// 一级联动初始化
+	    		let picker = new $.PopPicker();
+	    		picker.setData([
+	    			{value:'beijing',text:'北京'},
+	    			{value:'shenzhen',text:'深圳'}
+	    			]);
+	    		
+	    		// 二级联动初始化
+	    		let picker_2 = new $.PopPicker({
+			    layer: 2
+			});
+			    picker_2.setData([{
+			        value: '110000',
+			        text: '北京市',
+			        children: [{
+			                value: "110101",
+			                text: "东城区"
+			        }]
+			    }, {
+			        value: '120000',
+			        text: '天津市',
+			        children: [{
+				        value: "120101",
+			            text: "和平区"
+			        }, {
+			            value: "120102",
+			            text: "河东区"
+			        }, {
+			            value: "120104",
+			            text: "南开区"
+			        }
+			        ]
+			    }])
+			picker_2.pickers[0].setSelectedIndex(1);
+			picker_2.pickers[1].setSelectedIndex(1);
+			
+			//日期选择器
+			let dtPicker = new $.DtPicker(); 
+			let dtPicker_2 = new $.DtPicker({
+			    type: "time",//设置日历初始视图模式 
+			    beginDate: new Date(2015, 04, 25),//设置开始日期 
+			    endDate: new Date(2016, 04, 25),//设置结束日期 
+			    labels: ['Year', 'Mon', 'Day', 'Hour', 'min'],//设置默认标签区域提示语 
+			    customData: { 
+			        h: [
+			            { value: 'AM', text: 'AM' },
+			            { value: 'PM', text: 'PM' }
+			        ] 
+			    }//时间/日期别名 
+			}) 
+		    
+			
+			// 获取元素
+	    		let btn_picker = document.body.querySelector("button[name='picker']");
+	    		let btn_picker_2 = document.body.querySelector("button[name='picker-2']");
+	    		let btn_picker_3 = document.body.querySelector("button[name='picker-3']");
+	    		let btn_picker_4 = document.body.querySelector("button[name='picker-4']");
+	    		let result_1 = document.body.querySelector(".result-1");
+	    		let result_2 = document.body.querySelector(".result-2");
+	    		let result_3 = document.body.querySelector(".result-3");
+	    		let result_4 = document.body.querySelector(".result-4");
+	    		
+	    		// 绑定事件
+	    		btn_picker.addEventListener("tap",function(){
+				 picker.show(function (selectItems) {
+				 	result_1.innerHTML = "一级选择结果：" + selectItems[0].text + " " + selectItems[0].value;
+				  })
+	    		})
+	    		btn_picker_2.addEventListener("tap",function(){
+				 picker_2.show(function(SelectedItem) {
+					console.log(SelectedItem);
+					result_2.innerHTML = "二级选择结果：" + SelectedItem[0].text + " " + SelectedItem[1].text;
+				})
+	    		})
+	    		btn_picker_3.addEventListener("tap",function(){
+				 dtPicker.show(function(selectItems) {
+		        		// y m d h i 
+					result_3.innerHTML = "日期选择结果：" + selectItems.text;
+				})
+	    		})
+	    		btn_picker_4.addEventListener("tap",function(){
+				 dtPicker_2.show(function(selectItems) {
+		        		console.log(selectItems)
+					result_4.innerHTML = "时间选择结果：" + selectItems.text;
+				})
+	    		})
+			
+		    
+	    }(mui, document));
+	</script>
+</html>
