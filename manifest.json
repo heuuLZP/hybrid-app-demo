@@ -241,11 +241,11 @@
 					"css/mui.min.css",
 					"fonts/mui.ttf",
 					"css/icons-extra.css",
-					"fonts/mui-icons-extra.ttf"
+					"fonts/mui-icons-extra.ttf",
+					"pages/UI/index.html"
 				],
 				"refer": [
 					"UI/accordion.html",
-					"pages/UI/index.html",
 					"pages/window/index.html",
 					"pages/event/index.html",
 					"pages/ajax/index.html",
@@ -278,7 +278,8 @@
 				"resources": [
 					"js/mui.min.js",
 					"css/mui.min.css",
-					"fonts/mui.ttf"
+					"fonts/mui.ttf",
+					"index.html"
 				],
 				"refer": [
 					"pages/UI/accordion.html",
