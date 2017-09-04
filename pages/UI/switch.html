@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<style>
+			.section {
+				padding: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- header -->
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">switch</h1>
+		</header>
+		<!-- content -->
+		<div class="mui-content">
+			<div class="section">
+				<h5>默认开关</h5>
+				<div class="mui-switch">
+				  <div class="mui-switch-handle"></div>
+				</div>
+			</div>
+			<div class="section">
+				<h5>开关打开状态，多了一个.mui-active类</h5>
+				<!-- 开关打开状态，多了一个.mui-active类 -->
+				<div class="mui-switch mui-active">
+				  <div class="mui-switch-handle"></div>
+				</div>
+			</div>
+			<div class="section">
+				<h5>简洁模式开关关闭状态</h5>
+				<!-- 简洁模式开关关闭状态 -->
+				<div class="mui-switch mui-switch-mini">
+				  <div class="mui-switch-handle"></div>
+				</div>
+			</div>	
+			<div class="section">
+				<h5>简洁模式开关打开状态</h5>
+				<!-- 简洁模式开关打开状态 -->
+				<div class="mui-switch mui-switch-mini mui-active">
+				  <div class="mui-switch-handle"></div>
+				</div>
+			</div>	
+			<div class="section">
+				<h5>蓝色开关关闭状态</h5>
+				<!-- 蓝色开关关闭状态 -->
+				<div class="mui-switch mui-switch-blue">
+				  <div class="mui-switch-handle"></div>
+				</div>
+			</div>	
+			<div class="section">
+				<h5>蓝色开关打开状态</h5>
+				<!-- 蓝色开关打开状态 -->
+				<div class="mui-switch mui-switch-blue mui-active">
+				  <div class="mui-switch-handle"></div>
+				</div>
+			</div>	
+			<div class="section">
+				<h5>简洁模式开关打开状态</h5>
+				<!-- 简洁模式开关打开状态 -->
+				<div class="mui-switch mui-switch-mini mui-switch-blue mui-active">
+				  <div class="mui-switch-handle"></div>
+				</div>
+			</div>	
+		</div>
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script>
+	    (function($, doc){
+	    		$.init({
+	    			statusBarBackground: '#f7f7f7'
+	    		});
+	    		
+	    }(mui, document));
+	</script>
+</html>
